@@ -1,0 +1,571 @@
+/* 清空默认边距 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* html {
+    font-size: 80px;
+} */
+
+body {
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+/* 修改默认样式 */
+h4,
+h3,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(25, 80, 196);
+}
+
+/* 整体的布局 */
+.viewport {
+    min-width: 1024px;
+    max-width: 2520px;
+    min-height: 15rem;
+    margin: 0 auto;
+    /* padding: .875rem .25rem 0; */
+    padding: 1.5rem .25rem 0;
+    box-sizing: border-box;
+    background: url(../images/logo.png) no-repeat;
+    background-size: contain;
+    display: flex;
+}
+
+/* 弹性布局的整体分3列 3 4 3*/
+.column {
+    flex: 3;
+    /* background-color: aqua; */
+}
+
+.column:nth-of-type(2) {
+    flex: 4;
+    /* background-color: aquamarine; */
+    margin: .375rem .1875rem 0;
+}
+
+/* 公共边框样式 */
+.panel {
+    border: 1px solid transparent;
+    border-image-source: url(../images/border.png);
+    border-width: .6375rem .475rem .25rem 1.65rem;
+    border-image-slice: 51 38 20 132;
+    margin-bottom: 0.25rem;
+    position: relative;
+}
+
+.inner {
+    position: absolute;
+    top: -.6375rem;
+    right: -.475rem;
+    bottom: -.25rem;
+    left: -1.65rem;
+    padding: .225rem .325rem;
+}
+
+.inner h4 {
+    /* font-size: .25rem; */
+    font-size: .5rem;
+    color: white;
+    /* margin-bottom: 0.06rem; */
+    margin-bottom: -.3rem;
+}
+
+.inner h3 {
+    /* font-size: .225rem; */
+    font-size: .5rem;
+    color: white;
+    font-weight: 400;
+}
+
+/* 通用的图例部分 .data和.item */
+.data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* width: 2.1rem; */
+    /* height: 2.4rem; */
+    height: 4rem;
+    padding: .45rem .3rem;
+    box-sizing: border-box;
+    background: url(../images/rect.png);
+    background-size: cover;
+}
+
+/* .data>.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+.item p {
+    line-height: 1.5rem;
+    color: rgb(248, 171, 5);
+    /* font-size: .175rem; */
+    font-size: .35rem;
+}
+
+/* 概览 */
+.overview {
+    /* height: 1.25rem; */
+    height: 2rem;
+    line-height: 1rem;
+    box-sizing: border-box;
+}
+
+.overview ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overview ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+.overview p {
+    font-size: 0.15rem;
+    color: rgb(52, 130, 246);
+}
+
+/* 全部小竖条的样式 */
+.line {
+    display: inline-block;
+    width: 0.05rem;
+    /* height: .125rem; */
+    height: .22rem;
+    border-radius: .0625rem;
+    /* margin-right: .0625rem; */
+    margin-right: .1rem;
+}
+
+/* 监控部分 */
+.monitoring {
+    /* height: 4rem; */
+    height: 8rem;
+}
+
+/* 选择栏 */
+.monitoring .tabs {
+    /* font-size: .225rem; */
+    font-size: .4rem;
+    /* background-color: blueviolet; */
+    /* height: .375rem; */
+    height: .875rem;
+    display: flex;
+    align-items: center;
+}
+
+.tabs .active {
+    color: white;
+}
+
+.tabs .line {
+    /* display: inline-block; */
+    width: .0375rem;
+    height: .375rem;
+    background-color: rgb(111, 238, 239);
+    border-radius: 0;
+    margin: 0 .25rem;
+}
+
+.content {
+    /* height: 3.875rem; */
+    height: 7.5rem;
+    /* background-color: brown; */
+    margin-top: .125rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.monitoring .content>.top {
+    /* height: .4375rem; */
+    height: .875rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* line-height: .4375rem; */
+    line-height: .875rem;
+    color: rgb(104, 216, 254);
+    /* font-size: .15rem; */
+    font-size: .35rem;
+}
+
+.content .row {
+    display: flex;
+    /* font-size: .15rem; */
+    font-size: .35rem;
+    /* line-height: .4375rem; */
+    line-height: .85rem;
+    color: rgb(52, 130, 246);
+}
+
+.content .col:nth-of-type(1) {
+    /* width: 1rem; */
+    flex: 1;
+}
+
+.content .col:nth-of-type(2) {
+    /* width: 2.5rem; */
+    flex: 2.5;
+}
+
+.content .col:nth-of-type(3) {
+    /* width: 1rem; */
+    flex: 1;
+}
+
+/* 滚动动画 */
+.message {
+    overflow: hidden;
+}
+
+.message>.messageScrool {
+    animation: rollPlay linear 3s infinite;
+}
+
+/* 动画悬浮暂停 */
+.message>.messageScrool:hover {
+    animation-play-state: paused;
+}
+
+@keyframes rollPlay {
+    0% {}
+
+    100% {
+        transform: translateY(-.4375rem);
+    }
+}
+
+/* 点位分布 */
+.point {
+    /* height: 2.6rem; */
+    height: 4.5rem;
+
+
+}
+
+.point .chart {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .125rem;
+}
+
+/* 饼状图 */
+.point .pie {
+    flex: 3;
+    /* width: 3.9rem; */
+    /* height: 2.4rem; */
+    height: 4rem;
+    /* background-color: blueviolet; */
+}
+
+
+/* 地图 */
+.map {
+    /* height: 6rem; */
+    height: 10.75rem;
+    margin-bottom: .25rem;
+    /* background-color: chartreuse; */
+}
+
+.map h3 {
+    /* line-height: 0.5rem; */
+    line-height: 1.4rem;
+    /* background-color: blue; */
+    /* font-size: .2rem; */
+    font-size: .45rem;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.map .iconCube {
+    display: inline-block;
+    /* width: .25rem;
+    height: .25rem; */
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: .0625rem;
+    /* background-color: blueviolet; */
+    background: url(../images/shebei.png)no-repeat;
+    background-size: contain;
+}
+
+.map .chart {
+    /* height: 5.5rem; */
+    height: 9.35rem;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.map .geo {
+    width: 100%;
+    height: 100%;
+}
+
+/* 全国用户总量 */
+.users {
+    /* height: 2.6rem; */
+    height: 4.5rem;
+}
+
+.users .chart {
+    margin-top: .125rem;
+    display: flex;
+}
+
+.users .bar {
+    flex: 5;
+}
+
+.users p {
+    color: rgb(76, 253, 226);
+}
+
+/* 订单 */
+.order {
+    /* height: .7rem; */
+    height: 1.8rem;
+}
+
+.order .filter {
+    display: flex;
+}
+
+.filter>a {
+    display: inline-block;
+    /* height: .225rem; */
+    /* font-size: .2rem; */
+    font-size: .35rem;
+    /* padding: 0 .1875rem; */
+    padding: 0 .3rem;
+    border-right: .0125rem solid rgb(0, 242, 241);
+}
+
+.filter .active {
+    color: white;
+}
+
+.filter>a:first-child {
+    padding-left: 0;
+}
+
+.filter>a:last-child {
+    border-right: none;
+}
+
+.order .data {
+    height: .7rem;
+    padding: .1875rem 0;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    /* background-color: blueviolet; */
+}
+
+.order .item {
+    flex: 1;
+}
+
+.order .item>p {
+    color: rgb(76, 155, 253);
+}
+
+.orderDataHidden {
+    display: none !important;
+}
+
+/* 销售额统计 */
+.sales {
+    /* height: 1.8rem; */
+    height: 4rem;
+}
+
+/* 文字说明  */
+.sales .caption {
+    display: flex;
+    padding: .2rem;
+}
+
+.sales a {
+    /* font-size: .175rem; */
+    font-size: .4rem;
+    margin-left: .25rem;
+    padding: .03rem .1rem;
+    box-sizing: border-box;
+    /* margin-top: -0.0625rem; */
+    border-radius: .025rem;
+}
+
+.sales .active {
+    background-color: rgb(76, 155, 253);
+    color: white;
+}
+
+.sales h3 {
+    padding-right: .35rem;
+    border-right: .0125rem solid rgb(0, 242, 241);
+}
+
+/* 图表 */
+.sales .chart {
+    /* height: 1.75rem; */
+    height: 3.3rem;
+    /* background-color: rgb(43, 226, 52); */
+    position: relative;
+}
+
+.sales .chart>.label {
+    /* font-size: .175rem; */
+    font-size: .2rem;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    color: rgb(73, 150, 245);
+    box-sizing: border-box;
+}
+
+/* 曲线折线图 */
+.sales .sline {
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 80%;
+}
+
+/* 渠道分布+季度进度  左右两部分 */
+.wrap {
+    display: flex;
+}
+
+.wrap h3 {
+    font-size: .4rem;
+}
+
+/* 渠道分布 */
+.wrap .channel {
+    flex: 2;
+    /* height: 1.7rem; */
+    height: 3.2rem;
+    margin-right: .125rem;
+}
+
+/* 图表 */
+.wrap .chart {
+    /* height: 1.8rem; */
+    height: 3rem;
+    /* background-color: aqua; */
+}
+
+/* 雷达图 */
+.wrap .radar {
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 100%;
+}
+
+/* 季度进度 */
+.wrap .progress {
+    flex: 1;
+    /* height: 1.7rem; */
+    height: 3.2rem;
+}
+
+.progress .chart {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.progress .label {
+    /* background-color: aqua; */
+    /* font-size: .375rem; */
+    font-size: .7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    color: white;
+}
+
+.progress .label small {
+    font-size: 50%;
+}
+
+.progress .data {
+    margin-top: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: none;
+}
+
+.progress .item {
+    width: 65%;
+}
+
+/* .progress .item h4 {
+    font-size: .3rem;
+    margin-bottom: .1rem
+} */
+
+.progress .item>p {
+    color: rgb(76, 253, 226);
+    font-size: .175rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* 完成进度 */
+.finish {
+    /* height: 1.7rem; */
+    height: 3.6rem;
+}
+
+/* 图表 */
+.finish .chart {
+    /* height: 1.8rem; */
+    height: 3rem;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 水球图 */
+.finish .water {
+    flex: 3;
+    /* background-color: blueviolet; */
+    margin-right: .125rem;
+
+}
+
+/* 图例 */
+.finish .data {
+    /* height: 1.8rem; */
+    height: 3.2rem;
+    /* padding: .25rem .125rem; */
+    padding: .15rem  0 .1rem .25rem;
+}
+
+.finish h4 {
+    /* font-size: .25rem; */
+    font-size: .4rem; 
+}
